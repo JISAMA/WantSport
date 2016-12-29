@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1, user-scalable=0">
+    <title>coachList</title>
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/index.css" rel="stylesheet" type="text/css">
+    <script src="../static/js/jquery-3.1.1.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style rel="stylesheet">
+        body{
+            width: 100%;
+            height: 100%;
+            font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑', serif;
+        }
+    </style>
+</head>
+<header class="text-center header">
+    <img id="target" class="target">
+    <p class="white">教练列表</p>
+</header>
+<body>
+<div class="row filtration">
+    <div class="col-xs-4">
+        <button class="center-block text-center area" data-toggle="dropdown">
+            <span>区域</span>
+            <img>
+        </button>
+        <ul class="area-menu dropdown-menu" role="menu" style="min-width: 100px;margin: 0 0 50% 0;padding: 0;">
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+    <div class="col-xs-4">
+        <button class="center-block text-center level" data-toggle="dropdown">
+            <span>级别</span>
+            <img>
+        </button>
+        <ul class="level-menu dropdown-menu" role="menu" style="min-width: 100px;margin: 0 0 50% 0;padding: 0;">
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+    <div class="col-xs-4">
+        <button class="center-block">
+            <span>人气</span>
+        </button>
+    </div>
+</div>
+<script>
+    var target=[{"target1":"../static/img/target.png"},{"target3":"../static/img/target-3.png"}];
+    var coach=[
+        {
+            "headPhoto":"../static/img/head-default.png",
+            "userNname":"张晓露",
+            "mark":"4.3",
+            "coachAge":"3",
+            "distance":"5",
+            "look":"20",
+            "cost":"150",
+            "coachDetailUrl":"../index/index.html",
+            "coachAddress":"杭州市江干区XX街道"
+        },
+        {
+            "headPhoto":"../static/img/head-default.png",
+            "userNname":"朱军",
+            "mark":"4.6",
+            "coachAge":"3",
+            "distance":"5",
+            "look":"20",
+            "cost":"80",
+            "coachDetailUrl":"../index/index.html",
+            "coachAddress":"杭州市上城区XX街道"
+        },
+        {
+            "headPhoto":"../static/img/head-default.png",
+            "userNname":"刘烨",
+            "mark":"3.8",
+            "coachAge":"3",
+            "distance":"5",
+            "look":"20",
+            "cost":"100",
+            "coachDetailUrl":"../index/index.html",
+            "coachAddress":"杭州市江干区XX街道"
+        }
+    ];
+    var area=[
+            "江干区",
+            "西湖区",
+            "拱墅区",
+            "上城区",
+            "滨江区"
+    ];
+    var level=[
+        "高级",
+        "中级",
+        "初级"
+    ];
+    $(".header").find("img").attr("src",target[0].target1);
+    $(".area").find("img").attr("src",target[1].target3);
+    $(".level").find("img").attr("src",target[1].target3);
+    var coachList=new Array();
+    var areaList=new Array();
+    var levelList=new Array();
+    var k;
+    for(var n=0;area[n]!=null;n++){
+        $(".area-menu").append("<li><a href='#'>"+area[n]+"</a></li>");
+    }
+    var $dm1=$(".area-menu");
+    $dm1.find("li").click(function(){
+        $(this).find("a").css("color","#d44021");
+        $(this).prevAll().find("a").css("color","black");
+        $(this).nextAll().find("a").css("color","black");
+        var a=$(this).find("a").text();
+        if(a.length==0){
+            $dm1.prev("button").find("span").text("区域");
+        }
+        else{
+            $dm1.prev("button").find("span").text(a);
+        }
+    });
+    for(var m=0;level[m]!=null;m++){
+        $(".level-menu").append("<li><a href='#'>"+level[m]+"</a></li>");
+    }
+    var $dm2=$(".level-menu");
+    $dm2.find("li").click(function(){
+        $(this).find("a").css("color","#d44021");
+        $(this).prevAll().find("a").css("color","black");
+        $(this).nextAll().find("a").css("color","black");
+        var b=$(this).find("a").text();
+        if(b.length==0){
+            $dm2.prev("button").find("span").text("级别");
+        }
+        else{
+            $dm2.prev("button").find("span").text(b);
+        }
+    });
+    for(var i=0;coach[i]!=null;i++){
+        coachList[i]=$("<div class='row coach-list'><a href='"+coach[i].coachDetailUrl+"'>"+
+        "<img class='head-photo' src='"+coach[i].headPhoto+"'>"+
+            "<div class='col-xs-6'>"+
+                "<div class='coach-list-name-star'>"+
+                    "<span class='black'>"+coach[i].userNname+"</span>"+
+                    "<div class='stars' style='padding: 0'>"+
+                        "<img>"+
+                        "<img>"+
+                        "<img>"+
+                        "<img>"+
+                        "<img>"+
+                    "</div>"+
+                "</div>"+
+                "<br>"+
+                "<div class='coach-list-age-cost'>"+
+                    "<span class='coach-age gray'>"+coach[i].coachAge+"年教龄</span>"+
+                    "<span class='coach-cost red'>￥"+coach[i].cost+"/h</span>"+
+                "</div>"+
+            "</div>"+
+        "<div class='col-xs-3' style='padding-right: 0'>"+
+            "<div class='coach-distance'>"+
+                "<img src='../static/img/coord.png'>"+
+                "<span class='gray'>"+coach[i].distance+"km</span>"+
+            "</div>"+
+            "<div class='coach-look'>"+
+                "<img src='../static/img/eye.png'>"+
+                "<span class='gray'>"+coach[i].look+"</span>"+
+            "</div>"+
+        "</div>"+
+        "</a></div>");
+        $(".filtration").after(coachList[i]);
+        for(k=0;k<5;k++){
+            if(coach[i].mark>=1){
+                coachList[i].find(".stars").find("img").eq(k).attr("src","../static/img/star-full.png");
+            }
+            else if(coach[i].mark<=0){
+                coachList[i].find(".stars").find("img").eq(k).attr("src","../static/img/star-empty.png");
+            }
+            else{
+                switch (coach[i].mark){
+                    case ("0.1"):
+                        coachList[i].find(".stars").find("img").eq(k).attr("src","../static/img/star-1.png");
+                        break;
+                    case ("0.2"):
+                        coachList[i].find(".stars").find("img").eq(k).attr("src","../static/img/star-2.png");
+                        break;
+                    case ("0.3"):
+                        coachList[i].find(".stars").find("img").eq(k).attr("src","../static/img/star-3.png");
+                        break;
+                    case ("0.4"):
+                        coachList[i].find(".stars").find("img").eq(k).attr("src","../static/img/star-4.png");
+                        break;
+                    case ("0.5"):
+                        coachList[i].find(".stars").find("img").eq(k).attr("src","../static/img/star-5.png");
+                        break;
+                    case ("0.6"):
+                        coachList[i].find(".stars").find("img").eq(k).attr("src","../static/img/star-6.png");
+                        break;
+                    case ("0.7"):
+                        coachList[i].find(".stars").find("img").eq(k).attr("src","../static/img/star-7.png");
+                        break;
+                    case ("0.8"):
+                        coachList[i].find(".stars").find("img").eq(k).attr("src","../static/img/star-8.png");
+                        break;
+                    case ("0.9"):
+                        coachList[i].find(".stars").find("img").eq(k).attr("src","../static/img/star-9.png");
+                        break;
+                }
+            }
+            coach[i].mark=numSub(coach[i].mark,1);
+        }
+    }
+    /**
+     * 减法运算，避免数据相减小数点后产生多位数和计算精度损失。
+     *
+     * @param num1被减数 | num2减数
+     */
+    function numSub(num1, num2) {
+        var baseNum, baseNum1, baseNum2;
+        var precision;// 精度
+        try {
+            baseNum1 = num1.toString().split(".")[1].length;
+        } catch (e) {
+            baseNum1 = 0;
+        }
+        try {
+            baseNum2 = num2.toString().split(".")[1].length;
+        } catch (e) {
+            baseNum2 = 0;
+        }
+        baseNum = Math.pow(10, Math.max(baseNum1, baseNum2));
+        precision = (baseNum1 >= baseNum2) ? baseNum1 : baseNum2;
+        return ((num1 * baseNum - num2 * baseNum) / baseNum).toFixed(precision);
+    }
+</script>
+
+</body>
+</html>

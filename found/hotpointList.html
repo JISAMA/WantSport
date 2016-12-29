@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>热点</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1, user-scalable=0">
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/errorPage.css" rel="stylesheet" type="text/css">
+    <script src="../static/js/jquery-3.1.1.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../static/css/found.css">
+</head>
+<body>
+<header class="text-center">
+    <img id="source" class="back-button" src="../static/img/target.png">
+    <p class="header-head">发现</p>
+</header>
+<div class="container" id="found-navbar">
+    <div class="col-xs-3 active">热点</div>
+    <div class="col-xs-3">赛事</div>
+    <div class="col-xs-3">视频</div>
+    <div class="col-xs-3">商城</div>
+</div>
+<div class="container" id="hot-list">
+    <div class="col-xs-12 hot-list-item">
+        <div class="col-xs-4 hot-list-item-img">
+            <img src="../static/img/found/hot-list-item-img.jpg">
+        </div>
+        <div class="col-xs-8">
+            <div class="hot-list-item-content-head">
+                热点标题热点标题热点标题热点
+            </div>
+            <p class="hot-list-item-content-main">
+                热点简介热点简介热点简介热点简介热点简介热点简介热点简介
+            </p>
+            <div class="hot-list-item-content-remark-num">
+                <img src="../static/img/found/hot-remark-num.jpg">
+                16
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 hot-list-item">
+        <div class="col-xs-4 hot-list-item-img">
+            <img src="../static/img/found/hot-list-item-img.jpg">
+        </div>
+        <div class="col-xs-8">
+            <div class="hot-list-item-content-head">
+                热点标题热点标题热点标题热点
+            </div>
+            <p class="hot-list-item-content-main">
+                热点简介热点简介热点简介热点简介热点简介热点简介热点简介
+            </p>
+            <div class="hot-list-item-content-remark-num">
+                <img src="../static/img/found/hot-remark-num.jpg">
+                16
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 hot-list-item">
+        <div class="col-xs-4 hot-list-item-img">
+            <img src="../static/img/found/hot-list-item-img.jpg">
+        </div>
+        <div class="col-xs-8">
+            <div class="hot-list-item-content-head">
+                热点标题热点标题热点标题热点
+            </div>
+            <p class="hot-list-item-content-main">
+                热点简介热点简介热点简介热点简介热点简介热点简介热点简介
+            </p>
+            <div class="hot-list-item-content-remark-num">
+                <img src="../static/img/found/hot-remark-num.jpg">
+                16
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 hot-list-item">
+        <div class="col-xs-4 hot-list-item-img">
+            <img src="../static/img/found/hot-list-item-img.jpg">
+        </div>
+        <div class="col-xs-8">
+            <div class="hot-list-item-content-head">
+                热点标题热点标题热点标题热点
+            </div>
+            <p class="hot-list-item-content-main">
+                热点简介热点简介热点简介热点简介热点简介热点简介热点简介
+            </p>
+            <div class="hot-list-item-content-remark-num">
+                <img src="../static/img/found/hot-remark-num.jpg">
+                16
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 hot-list-item">
+        <div class="col-xs-4 hot-list-item-img">
+            <img src="../static/img/found/hot-list-item-img.jpg">
+        </div>
+        <div class="col-xs-8">
+            <div class="hot-list-item-content-head">
+                热点标题热点标题热点标题热点
+            </div>
+            <p class="hot-list-item-content-main">
+                热点简介热点简介热点简介热点简介热点简介热点简介热点简介
+            </p>
+            <div class="hot-list-item-content-remark-num">
+                <img src="../static/img/found/hot-remark-num.jpg">
+                16
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 hot-list-item">
+        <div class="col-xs-4 hot-list-item-img">
+            <img src="../static/img/found/hot-list-item-img.jpg">
+        </div>
+        <div class="col-xs-8">
+            <div class="hot-list-item-content-head">
+                热点标题热点标题热点标题热点
+            </div>
+            <p class="hot-list-item-content-main">
+                热点简介热点简介热点简介热点简介热点简介热点简介热点简介
+            </p>
+            <div class="hot-list-item-content-remark-num">
+                <img src="../static/img/found/hot-remark-num.jpg">
+                16
+            </div>
+        </div>
+    </div>
+</div>
+<footer></footer>
+<script>
+    $("footer").load("../footMenu/footMenu.html#foot-menu",function(){
+        $("#index").find("img").attr("src","../static/img/index_red.png") && $("#index").find("p").removeClass("white") && $("#index").find("p").addClass("red");
+        $("#found").find("img").attr("src","../static/img/found.png") && $("#found").find("p").removeClass("red") && $("#found").find("p").addClass("white");
+        $("#yue").find("img").attr("src","../static/img/yue_button.png") && $("#yue").find("p").removeClass("red") && $("#yue").find("p").addClass("white");
+        $("#gym").find("img").attr("src","../static/img/gym.png") && $("#gym").find("p").removeClass("red") && $("#gym").find("p").addClass("white");
+        $("#my").find("img").attr("src","../static/img/my.png") && $("#my").find("p").removeClass("red") && $("#my").find("p").addClass("white");
+    });
+</script>
+</body>
+</html>

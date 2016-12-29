@@ -1,0 +1,77 @@
+header{
+    background-color: #d44021;
+    font-family: "Microsoft YaHei", serif;
+}
+body,html{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft YaHei", serif;
+}
+.white{
+    color: #fff;
+}
+.red{
+    color: #d44021;
+}
+.gray{
+    color: #aaa;
+}
+.black{
+    color: #000;
+}
+.orange{
+    color: #f0a31f;
+}
+.blue{
+    color: rgba(0, 7, 244, 0.61);
+}
+.bold{
+    font-weight: bold;
+}
+.hidden{
+    display: none;
+}
+.smaller{
+    font-size: 10px;
+}
+.target{
+    float: left;
+    margin:5px 0 0 15px;
+    height: 18px;
+}
+.header{
+    width: 100%;
+    margin: 0;
+    background-color: #d44021;
+    padding: 10px 0 8px 0;
+    font-size: 19px;
+}
+.header p{
+    width: 100%;
+    margin:0 0 0 -15px;
+}
+.btn-footer{
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+}
+.btn-footer button{
+    width: 98%;
+    position: relative;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    background-color: #d44021;
+    border: 0;
+    font-size: 19px;
+    padding: 10px 0 12px 0;
+    z-index: 8;
+}
+.btn-footer button{
+     border-radius: 5px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     -o-border-radius: 5px;
+ }

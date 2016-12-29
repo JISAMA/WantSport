@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>赛事详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1, user-scalable=0">
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/errorPage.css" rel="stylesheet" type="text/css">
+    <script src="../static/js/jquery-3.1.1.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/found.css">
+</head>
+<body>
+<header class="text-center">
+    <img id="source" class="back-button" src="../static/img/target.png">
+    <p class="header-head">赛事信息</p>
+</header>
+<div class="container" id="saishi-img">
+    <img src="">
+</div>
+<div class="container" id="time-piece">
+    <div class="col-xs-6">
+        <img src="../static/img/found/time-piece-clock.jpg" id="time-clock">
+        <span id="time-piece-time"></span>
+    </div>
+    <div class="col-xs-6" id="time-piece-piece">
+        ￥<span></span>元
+    </div>
+</div>
+<div class="container" id="address">
+    <div class="col-xs-10" id="address-text">
+        <strong>地点：<span></span></strong>
+    </div>
+    <div class="col-xs-2" id="address-navi">
+        <a href=""><img src="../static/img/location_gray.png" id="address-navi-content-icon"></a>
+    </div>
+</div>
+<div class="container" id="phone">
+    <div class="col-xs-10" id="phone-text">
+        <strong>电话：<span></span></strong>
+    </div>
+    <div class="col-xs-2" id="phone-navi">
+        <a href=""><img src="../static/img/tel.png" id="phone-navi-content-icon"></a>
+    </div>
+</div>
+<div class="container" id="signed-men">
+    <div class="col-xs-12" style="margin-bottom: 2%">
+        已经报名的球友
+    </div>
+    <div class="competitionDetail-apply-people">
+    </div>
+    <div class="col-xs-12" style="padding: 0">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-6" id="signIn-status">
+            报名情况<span id="apply-num"></span>/<span id="all-num"></span>
+        </div>
+    </div>
+</div>
+<div class="container" id="description">
+    <div class="col-xs-12" id="desc-head">
+        赛事介绍
+    </div>
+    <div class="col-xs-12" id="desc-text">
+    </div>
+</div>
+
+<div style="height: 60px"></div>
+<div class=" btn-footer">
+    <button class="text-center white col-xs-12" id="bm">
+        活动报名
+    </button>
+</div>
+
+<script>
+    var ssDetail={
+        "headPic":"../static/img/found/saishi-tem-img.jpg",
+        "ssName":"杭州羽毛球俱乐部",
+        "status":"报名中",
+        "time":"18:00-20:00",
+        "cost":"100",
+        "address":"杭州电子科技大学体育馆",
+        "tel":"18012345678",
+        "addressUrl":"#",
+        "telUrl":"#",
+        "applyPeople":[
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png",
+            "../static/img/head_default.png"
+        ],
+        "num":"24",
+        "desc":"活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍",
+        "url":"../index/index.html"
+    };
+    var $cap=$(".competitionDetail-apply-people");
+    $("#source").click(function(){
+        window.history.back();
+    });
+    $("#saishi-img").find("img").attr("src",ssDetail.headPic);
+    $("#head-head").html(ssDetail.ssName);
+    $("#time-piece-time").html(ssDetail.time);
+    $("#time-piece-piece").find("span").html(ssDetail.cost);
+    $("#address-text").find("span").html(ssDetail.address);
+    $("#phone-text").find("span").html(ssDetail.tel);
+    $("#address-navi-content-icon").parent("a").attr("href",ssDetail.addressUrl);
+    $("#phone-navi-content-icon").parent("a").attr("href",ssDetail.telUrl);
+    $("#desc-text").html(ssDetail.desc);
+    $("#apply-num").html(ssDetail.applyPeople.length);
+    $("#all-num").html(ssDetail.num);
+
+    if(ssDetail.status=="报名中"){
+        $("#head-status-icon").attr("src","../static/img/status.png");
+    }
+    else{
+        $("#head-status-icon").attr("src","../static/img/status-1.jpg");
+    }
+
+    for(var i=0;i<ssDetail.applyPeople.length;i++){
+        if(i==9){
+            $cap.append("<span style='margin-left: 9%'>...</span>");
+            break;
+        }
+        $cap.append("<img src='"+ssDetail.applyPeople[i]+"'>");
+    }
+    $("#bm").click(function(){
+        window.location.href=ssDetail.url;
+    });
+</script>
+<script src="../static/js/system.js"></script>
+<script src="../static/js/competitionDetail.js"></script>
+</body>
+</html>

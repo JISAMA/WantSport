@@ -1,0 +1,157 @@
+body {
+    background-color: #f2f2f2;
+    font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑', serif;
+}
+header {
+    width: 100%;
+    margin: 0;
+    background-color: #d44021;
+    padding: 10px 0 8px 0;
+}
+
+header p {
+    width: 100%;
+    font-size: 19px;
+    margin: 0 0 0 -15px;
+}
+.header-head {
+    color: #fff;
+}
+.back-button {
+    float: left;
+    margin: 5px 0 0 15px;
+    height: 18px;
+}
+
+.select {
+    background-color: #fff;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-bottom: 2px;
+}
+footer .col-xs-2 img{
+    width: 50%;
+}
+footer .col-xs-2{
+    padding: 0;
+}
+footer{
+    background-color: #383735;
+    color: #fff;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+#yue{
+    padding: 0;
+}
+#yue-img{
+    width: 20%;
+    position: fixed;
+    bottom: 68px;
+    left: 0;
+}
+#gym-list{
+    padding-bottom: 3%;
+    padding-top: 3%;
+    background-color: #fff;
+}
+.gym-list-item{
+    padding: 3% 0;
+    border-bottom: solid 1px #CCC;
+}
+.gym-list-item img{
+    width: 100%;
+}
+.gym-list-item-head{
+    font-weight: 600;
+    font-size: large;
+    padding-bottom: 3%;
+}
+.gym-list-item-piece{
+    padding: 0;
+    color: #d44021;
+    font-weight: 600;
+}
+#gym-img{
+    padding: 0 0 3%;
+}
+#gym-img img{
+    width: 100%;
+}
+#gym-play-call img,#gym-play-navi img{
+    width: 60%;
+}
+#gym-play-navi,#gym-play-call,#gym-null-num,#gym-other{
+    padding: 0;
+}
+#gym-info{
+    background-color: #fff;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-bottom: 3%;
+}
+#gym-info-single,#gym-play{
+    padding: 0;
+}
+#gym-other,#gym-null-num{
+    font-size: small;
+}
+#gym-info-head{
+    font-size: large;
+    font-weight: 600;
+    margin-bottom: 3%;
+}
+#gym-piece{
+    background-color: #fff;
+    padding: 0;
+    margin-bottom: 3%;
+}
+#gym-piece .col-xs-4{
+    border: solid 1px #DDD;
+    padding: 3% 0;
+    font-weight: 600;
+}
+#gym-piece .head{
+    padding-bottom: 6%;
+    font-size: 12px;
+}
+#gym-piece p{
+    color: #d44021;
+    font-size: small;
+    font-weight: 700;
+}
+#gym-service{
+    background-color: #fff;
+    padding: 3% 0;
+    margin-bottom: 3%;
+}
+#gym-service .col-xs-2{
+    padding: 0;
+}
+#gym-service img{
+    height: 30px;
+    margin-bottom: 5px;
+}
+#gym-service-head{
+    padding-bottom: 3%;
+}
+#gym-more{
+    background-color: #fff;
+    padding: 3% 0;
+}
+#gym-more-navi .col-xs-4{
+    font-weight: 600;
+}
+#gym-more-navi .active{
+    font-weight: 600;
+    color: #d44021;
+}
+#gym-more-navi{
+    padding-bottom: 3%;
+}
+#gym-more p{
+    text-indent: 20px;
+}

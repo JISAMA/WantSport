@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>error</title>
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/errorPage.css" rel="stylesheet" type="text/css">
+    <script src="../static/js/jquery-3.1.1.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style rel="stylesheet">
+        body{
+            width: 100%;
+            height: 100%;
+            font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑', serif;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+<div class="row" style="width: 100%;margin-top: 35%;margin-left: 0; !important;">
+    <div class="col-xs-3"></div>
+    <div class="col-xs-6 center-block">
+        <img id="404-pic" class="center-block" style="width: 95%" src="">
+    </div>
+    <div class="col-xs-3"></div>
+</div>
+<div class="row text-center" style="margin-top: 5%">
+        <p id="problem" class="error-err-name text-center"></p>
+</div>
+<div class="row text-center">
+        <p id="description" class="error-err-des text-center"></p>
+</div>
+<div class="row" style="margin-top: 15%">
+    <div class="col-xs-3"></div>
+    <div class="col-xs-6 center-block">
+        <button class="err-btn" id="return"></button>
+    </div>
+    <div class="col-xs-3"></div>
+</div>
+
+<script type="text/javascript">
+    var img,name,desc,value,url;
+    $.getJSON("yuSport.json",function(json){
+        img=json.image;
+        name=json.name[0];
+        desc=json.desc[0];
+        value=json.return.value[0];
+        url=json.return.url[0];
+        $("#404-pic").attr('src',img);
+        $('#problem').html(name);
+        $('#description').html(desc);
+        var returnUrl = $("#return");
+        returnUrl.html(value);
+        returnUrl.click(function(){
+            window.location.href=url
+        });
+    });
+</script>
+</body>
+</html>
